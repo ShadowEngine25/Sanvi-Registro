@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Registro de usuarios de Sanvi Aprende 2.0, proyecto educativo de la I.E. San Vicente de Paúl de Jauja.">
+  <title>Tu comunidad de aprendizaje | Sanvi Aprende 2.0</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#access">Saltar al formulario</a>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Sanvi Aprende 2.0, inicio"><img src="assets/logo.svg" width="44" height="44" alt=""><span>Sanvi <strong>Aprende</strong><small>2.0</small></span></a>
+    <span class="institution">I.E. San Vicente de Paúl <span>Jauja, Perú</span></span>
+  </header>
+  <main class="shell">
+    <aside class="welcome" aria-labelledby="welcome-title">
+      <span class="eyebrow"><span class="live-dot" aria-hidden="true"></span> COMUNIDAD EDUCATIVA · JAUJA</span>
+      <h1 id="welcome-title">Tu aprendizaje.<br> <em>Un mundo de<br> posibilidades.</em></h1>
+      <p>Un punto de encuentro para estudiantes, docentes y familias de San Vicente de Paúl.</p>
+      <img class="illustration" src="assets/learning.svg" alt="Libros y un birrete, símbolos del aprendizaje" width="400" height="290">
+      <div class="benefit"><span aria-hidden="true">01</span><div><h2>Un espacio para cada perfil</h2><p>Una bienvenida pensada para tu rol.</p></div></div>
+      <div class="benefit"><span aria-hidden="true">02</span><div><h2>Más cerca de tu comunidad</h2><p>El primer paso hacia un aprendizaje conectado.</p></div></div>
+      <div class="welcome-foot">SANVI APRENDE 2.0 <span>Educación que conecta.</span></div>
+    </aside>
+    <section class="register" id="access" aria-label="Acceso a Sanvi Aprende" tabindex="-1">
+      <div class="access-nav" role="group" aria-label="Elige cómo acceder">
+        <button id="nav-register" type="button" aria-pressed="true">Crear cuenta</button>
+        <button id="nav-login" type="button" aria-pressed="false">Iniciar sesión</button>
+      </div>
+      <div class="demo-note"><span class="demo-badge">DEMO</span><p>Explora con datos ficticios. Las cuentas duran esta sesión de la pestaña; no se envían correos.</p></div>
+      <div id="registration-panel">
+        <span class="section-label">EMPIEZA AQUÍ</span>
+        <h2 id="form-title" tabindex="-1">Crea tu cuenta</h2>
+        <p class="intro">Completa tus datos y encuentra tu lugar en Sanvi.</p>
+        <form id="registration-form" novalidate>
+          <div class="field"><label for="name">Nombre completo</label><input id="name" name="name" autocomplete="name" required maxlength="100" placeholder="Ej. Ana Torres" aria-describedby="name-error"><span class="error" id="name-error"></span></div>
+          <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" placeholder="Ej. ana@ejemplo.com" aria-describedby="email-error"><span class="error" id="email-error"></span></div>
+          <fieldset class="profile-field"><legend>¿Cómo formas parte de Sanvi?</legend><div class="profile-grid">
+            <label class="profile-option"><input type="radio" name="role" value="estudiante" checked><span><b>Estudiante</b><small>Quiero aprender</small></span></label>
+            <label class="profile-option"><input type="radio" name="role" value="docente"><span><b>Docente</b><small>Quiero enseñar</small></span></label>
+            <label class="profile-option"><input type="radio" name="role" value="tutor"><span><b>Tutor</b><small>Quiero acompañar</small></span></label>
+            <label class="profile-option"><input type="radio" name="role" value="coordinador"><span><b>Coordinador</b><small>Quiero orientar</small></span></label>
+          </div><p class="field-hint">El perfil es ilustrativo; no concede permisos reales.</p></fieldset>
+          <div class="field"><label for="password">Contraseña</label><div class="password-wrap"><input id="password" name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="128" placeholder="Crea una contraseña" aria-describedby="password-help password-error"><button class="reveal" type="button" data-target="password" aria-label="Mostrar contraseña" aria-pressed="false">Mostrar</button></div><small id="password-help">Mínimo 8 caracteres. Usa una clave ficticia.</small><span class="error" id="password-error"></span></div>
+          <div class="field"><label for="confirm">Confirma tu contraseña</label><div class="password-wrap"><input id="confirm" name="confirm" type="password" autocomplete="new-password" required maxlength="128" placeholder="Vuelve a escribir tu contraseña" aria-describedby="confirm-error"><button class="reveal" type="button" data-target="confirm" aria-label="Mostrar confirmación de contraseña" aria-pressed="false">Mostrar</button></div><span class="error" id="confirm-error"></span></div>
+          <p id="form-message" class="error" role="alert"></p>
+          <button class="primary" type="submit">Crear cuenta de prueba <span aria-hidden="true">→</span></button>
+          <p class="storage-note">¿Ya creaste una cuenta de prueba? <button type="button" class="inline-button" id="switch-login">Inicia sesión</button></p>
+        </form>
+      </div>
+      <section id="login-panel" hidden aria-labelledby="login-title">
+        <span class="section-label">QUÉ BUENO VERTE DE NUEVO</span>
+        <h2 id="login-title" tabindex="-1">Continúa tu camino</h2>
+        <p class="intro">Ingresa con la cuenta de prueba que creaste en esta pestaña.</p>
+        <form id="login-form" novalidate>
+          <div class="field"><label for="login-email">Correo electrónico</label><input id="login-email" name="email" type="email" autocomplete="username" required maxlength="254" placeholder="Ej. ana@ejemplo.com" aria-describedby="login-email-error"><span class="error" id="login-email-error"></span></div>
+          <div class="field"><label for="login-password">Contraseña</label><div class="password-wrap"><input id="login-password" name="password" type="password" autocomplete="current-password" required maxlength="128" placeholder="Tu contraseña de prueba" aria-describedby="login-password-error"><button class="reveal" type="button" data-target="login-password" aria-label="Mostrar contraseña de ingreso" aria-pressed="false">Mostrar</button></div><span class="error" id="login-password-error"></span></div>
+          <p id="login-message" class="error" role="alert"></p>
+          <button class="primary" type="submit">Entrar a mi espacio <span aria-hidden="true">→</span></button>
+          <p class="storage-note">¿Es tu primera visita? <button class="inline-button" type="button" id="switch-register">Crea tu cuenta</button></p>
+        </form>
+        <div class="login-tip"><span aria-hidden="true">✦</span><p><strong>Un mismo lugar, distintas formas de crecer.</strong><br>Al ingresar verás una bienvenida según tu perfil.</p></div>
+      </section>
+      <section id="success-panel" hidden aria-labelledby="success-title">
+        <div class="profile-header"><span class="avatar" id="avatar" aria-hidden="true"></span><span class="role-badge" id="user-role"></span></div>
+        <span class="section-label">ESTÁS EN TU ESPACIO DE PRUEBA</span>
+        <h2 id="success-title" tabindex="-1"></h2>
+        <p class="intro" id="success-description"></p>
+        <div class="account-status"><span aria-hidden="true">✓</span><div><strong id="access-status">Registro completado</strong><p id="account-email"></p></div></div>
+        <h3 class="roadmap-title">Lo que viene para tu perfil</h3>
+        <p class="field-hint">Estas funciones se desarrollarán en próximos sprints.</p>
+        <div id="role-modules" class="role-modules"></div>
+        <p class="panel-note">La confirmación por correo y los permisos reales están pendientes. Este panel representa el acceso; no habilita servicios educativos.</p>
+        <button id="logout" type="button" class="secondary">Cerrar sesión de prueba</button>
+      </section>
+      <details class="help"><summary>Acerca de esta demostración</summary><p>Prototipo del Sprint 1: registro, ingreso y bienvenida según perfil. Los datos ficticios se conservan en esta sesión de la pestaña. No ofrece autenticación segura. Puedes borrar las cuentas de prueba con el botón inferior.</p><button type="button" class="text-button" id="clear-data">Borrar registros de prueba de Sanvi</button><p id="clear-status" role="status"></p></details>
+      <noscript><p class="error">Activa JavaScript para utilizar el formulario de registro.</p></noscript>
+    </section>
+  </main>
+  <footer>Sanvi Aprende 2.0 <span>Prototipo académico · Sprint 1 · Hecho para nuestra comunidad</span></footer>
+</body>
+</html>
